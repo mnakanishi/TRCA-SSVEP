@@ -27,5 +27,5 @@ A 40-target SSVEP dataset recorded from a single subject. The stimuli were gener
 * Sampling rate               : 250 [Hz]
 
 # References
-1. M. Nakanishi, Y. Wang, X. Chen, Y. -T. Wang, X. Gao, and T.-P. Jung, "Enhancing detection of SSVEPs for a high-speed brain speller using task-related component analysis", IEEE Trans. Biomed. Eng, 65(1): 104-112, 2018. DOI: <10.1109/TBME.2017.2694818>
-2. X. Chen, Y. Wang, M. Nakanishi, X. Gao, T. -P. Jung, S. Gao, "High-speed spelling with a non-invasive brain-computer interface", Proc. Natl. Acad. Sci. U.S.A, 112(44): E6058-E6067, 2015. DOI: <10.1073/pnas.1508080112>
+1. M. Nakanishi, Y. Wang, X. Chen, Y. -T. Wang, X. Gao, and T.-P. Jung, "Enhancing detection of SSVEPs for a high-speed brain speller using task-related component analysis", IEEE Trans. Biomed. Eng, 65(1): 104-112, 2018. DOI: [10.1109/TBME.2017.2694818]: http://ieeexplore.ieee.org/document/7904641/
+2. X. Chen, Y. Wang, M. Nakanishi, X. Gao, T. -P. Jung, S. Gao, "High-speed spelling with a non-invasive brain-computer interface", Proc. Natl. Acad. Sci. U.S.A, 112(44): E6058-E6067, 2015. DOI: [10.1073/pnas.1508080112]: http://www.pnas.org/content/early/2015/10/14/1508080112.abstract
