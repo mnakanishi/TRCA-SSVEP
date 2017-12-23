@@ -19,12 +19,12 @@ A 40-target SSVEP dataset recorded from a single subject. The stimuli were gener
 
 [# of targets, # of channels, # of sampling points, # of blocks] = size(eeg);
 
-* Stimulus frequencies  : 8.0 - 15.8 Hz with an interval of 0.2 Hz
-* Stimulus phases       : 0pi, 0.5pi, 1.0pi, and 1.5pi
-* # of channels         : 9 (1: Pz, 2: PO5,3:  PO3, 4: POz, 5: PO4, 6: PO6, 7: O1, 8: Oz, and 9: O2)
-* # of recording blocks : 6
-* Data length of epochs : 5 [seconds]
-* Sampling rate         : 250 [Hz]
+* Stimulus frequencies        : 8.0 - 15.8 Hz with an interval of 0.2 Hz
+* Stimulus phases             : 0pi, 0.5pi, 1.0pi, and 1.5pi
+* Number of channels          : 9 (1: Pz, 2: PO5,3:  PO3, 4: POz, 5: PO4, 6: PO6, 7: O1, 8: Oz, and 9: O2)
+* Number of recording blocks  : 6
+* Data length of epochs       : 5 [seconds]
+* Sampling rate               : 250 [Hz]
 
 # References
 1. M. Nakanishi, Y. Wang, X. Chen, Y. -T. Wang, X. Gao, and T.-P. Jung, "Enhancing detection of SSVEPs for a high-speed brain speller using task-related component analysis", IEEE Trans. Biomed. Eng, 65(1): 104-112, 2018. 
