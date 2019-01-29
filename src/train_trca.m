@@ -79,7 +79,7 @@ function W = trca(eeg)
 %        application to near-infrared spectroscopy data",
 %       NeuroImage, vol. 64, pp. 308-327, 2013.
 %
-% Masaki Nakanishi, 22-Dec-2017 / Updated:09-May-2018
+% Masaki Nakanishi, 22-Dec-2017 / Updated:28-Jan-2019
 % Swartz Center for Computational Neuroscience, Institute for Neural
 % Computation, University of California San Diego
 % E-mail: masaki@sccn.ucsd.edu
@@ -98,4 +98,4 @@ end % trial_i
 UX = reshape(eeg, num_chans, num_smpls*num_trials);
 UX = bsxfun(@minus, UX, mean(UX,2));
 Q = UX*UX';
-[W,~] = eig(S, Q);
+[W,~] = eigs(S, Q);

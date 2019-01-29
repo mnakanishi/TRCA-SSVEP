@@ -62,7 +62,7 @@ len_delay_s = 0.13;
 num_fbs = 5;
 
 % 1 -> The ensemble TRCA-based method, 0 -> The TRCA-based method
-is_ensemble = 1;
+is_ensemble = 0;
 
 % 100*(1-alpha_ci): confidence intervals
 alpha_ci = 0.05;                 
