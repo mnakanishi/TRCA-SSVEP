@@ -115,7 +115,6 @@ for loocv_i = 1:1:num_blocks
     traindata = eeg;
     traindata(:, :, :, loocv_i) = [];
     model = train_sscor(traindata, fs, num_fbs);
-    %model = train_trca(traindata, fs, num_fbs);
     
     % Test stage
     testdata = squeeze(eeg(:, :, :, loocv_i));
