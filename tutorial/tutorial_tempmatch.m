@@ -1,6 +1,6 @@
-% Sample codes for the sum of squared correlations (SSCOR)-based steady
+% Sample codes for the template-matching-based steady
 % -state visual evoked potential (SSVEP) detection method [1]. The filter
-% bank analysis [2] can also be combined to the TRCA-based algorithm.
+% bank analysis [2] can also be combined to the algorithm.
 %
 % Dataset (sample.mat):
 %   A 40-target SSVEP dataset recorded from a single subject. The stimuli
@@ -14,16 +14,16 @@
 %     - Sampling rate           : 250 [Hz]
 %
 % See also:
-%   train_sscor.m
-%   test_sscor.m
+%   train_trca.m
+%   test_trca.m
 %   filterbank.m
 %   itr.m
 %
 % Reference:
-%   [1] G. R. Kumar and M. R. Reddy,
-%       "Designing a Sum of Squared Correlations Framework for Enhancing SSVEP
-%        Based BCIs",
-%       IEEE Trans. Neural Syst. Rehabil. Eng., vol. 27, pp. 2044-2050, 2019.
+%   [1] M. Nakanishi, Y. Wang, X. Chen, Y.-T. Wang, X. Gao, and T.-P. Jung,
+%       "Enhancing detection of SSVEPs for a high-speed brain speller using
+%        task-related component analysis", 
+%       IEEE Trans. Biomed. Eng, 65(1): 104-112, 2018.
 %   [2] X. Chen, Y. Wang, S. Gao, T. -P. Jung and X. Gao,
 %       "Filter bank canonical correlation analysis for implementing a 
 %        high-speed SSVEP-based brain-computer interface",
@@ -32,7 +32,7 @@
 %       "High-speed spelling with a noninvasive brain-computer interface",
 %       Proc. Int. Natl. Acad. Sci. U. S. A, 112(44): E6058-6067, 2015.
 %
-% Kuan-Jung Chiang and Masaki Nakanishi, 25-Nov-2019
+% Masaki Nakanishi, 22-Dec-2017
 % Swartz Center for Computational Neuroscience, Institute for Neural
 % Computation, University of California San Diego
 % E-mail: masaki@sccn.ucsd.edu
@@ -40,8 +40,8 @@
 %% Clear workspace
 clear all
 close all
-%clc
-help tutorial_sscor
+clc
+help tutorial_trca
 
 %% Set paths
 
@@ -53,13 +53,13 @@ addpath('../src');
 filename = '../data/sample.mat';
 
 % Data length for target identification [s]
-len_gaze_s = 0.5;
+len_gaze_s = 0.5;   
 
 % Visual latency being considered in the analysis [s]
 len_delay_s = 0.13;                  
 
 % The number of sub-bands in filter bank analysis
-num_fbs = 1;
+num_fbs = 5;
 
 % 1 -> The ensemble TRCA-based method, 0 -> The TRCA-based method
 is_ensemble = 0;
@@ -98,9 +98,9 @@ len_sel_s = len_gaze_s + len_shift_s;
 % Confidence interval
 ci = 100*(1-alpha_ci);                  
 
-%% Performing the SSCOR-based SSVEP detection algorithm
+%% Performing the TRCA-based SSVEP detection algorithm
 
-fprintf('Results of the ensemble SSCOR-based method.\n');
+fprintf('Results of the ensemble TRCA-based method.\n');
 
 % Preparing data
 load(filename);
@@ -114,11 +114,11 @@ for loocv_i = 1:1:num_blocks
     % Training stage 
     traindata = eeg;
     traindata(:, :, :, loocv_i) = [];
-    model = train_sscor(traindata, fs, num_fbs);
+    model = train_model(traindata, fs, num_fbs, 'ftrca');
     
     % Test stage
     testdata = squeeze(eeg(:, :, :, loocv_i));
-    estimated = test_sscor(testdata, model, is_ensemble);
+    estimated = test_model(testdata, model, is_ensemble);
     
     % Evaluation 
     is_correct = (estimated==labels);

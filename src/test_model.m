@@ -1,5 +1,5 @@
-function results = test_trca(eeg, model, is_ensemble)
-% Test phase of the task-related component analysis (TRCA)-based
+function results = test_model(eeg, model, is_ensemble)
+% Test a model based of template-matching method for 
 % steady-state visual evoked potentials (SSVEPs) detection [1].
 %
 % function results = test_trca(eeg, model, is_ensemble)
@@ -24,7 +24,7 @@ function results = test_trca(eeg, model, is_ensemble)
 %        task-related component analysis",
 %       IEEE Trans. Biomed. Eng, 65(1): 104-112, 2018.
 %
-% Masaki Nakanishi, 22-Dec-2017
+% Masaki Nakanishi, 08-Sep-2022
 % Swartz Center for Computational Neuroscience, Institute for Neural
 % Computation, University of California San Diego
 % E-mail: masaki@sccn.ucsd.edu
